@@ -21,12 +21,13 @@ cv2.imshow("Output", img1)
 # if we insert a value it indicates the delay in milliseconds (1000 = 1 second)
 cv2.waitKey(0)
 
+cv2.destroyAllWindows()
 
 # ****************************** Reading a video and displaying it ******************************
 
 # creating a VideoCapture object (importing the video to an object)
 # the argument we put is the path of the video
-cap = cv2.VideoCapture("Resources/sky_video.mp4")
+cap = cv2.VideoCapture("Resources/sky_video1.mp4")
 
 # a video is a sequence of images, so we need a while loop that will go over each frame one by one and display it.
 while True:
@@ -43,6 +44,33 @@ while True:
 
     # show the result
     cv2.imshow("Video", frame)
+
+    # adding a delay that waits for the keyboard press 'q' if we want to break out of the loop
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+# ****************************** Reading a webcam and displaying it ******************************
+
+# creating a VideoCapture object (importing the video to an object)
+# the argument we put is the ID of our camera, '0' = use the default camera
+webcam_cap = cv2.VideoCapture(0)
+
+# setting parameters to the capture object
+# first parameter - ID number 3 = width
+webcam_cap.set(3, 640)
+# first parameter - ID number 4 = height
+webcam_cap.set(4, 480)
+# set the brightness level - ID number 10
+webcam_cap.set(10, 100)
+
+# a video is a sequence of images, so we need a while loop that will go over each frame one by one and display it.
+while True:
+    # save the current image in the img variable and inform if it was done successfully
+    # (success is a boolean variable - True/False
+    success, img = webcam_cap.read()
+
+    # show the result
+    cv2.imshow("Video", img)
 
     # adding a delay that waits for the keyboard press 'q' if we want to break out of the loop
     if cv2.waitKey(1) & 0xFF == ord('q'):

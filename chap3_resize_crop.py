@@ -16,7 +16,7 @@ import cv2
 # in order to resize an image we need to know the current size of the image
 
 # import an image
-img = cv2.imread("Resources/snow_in_Bolivia.png.png")
+img = cv2.imread("Resources/snow_in_Bolivia.png")
 
 # print the size of the image: (height, width, number of channels - BGR=3)
 print(img.shape)

@@ -53,7 +53,7 @@ def stack_images(scale, img_array):
 # ***********************************************
 
 
-path = 'Resources/Peru_lake.png'
+path = 'C:/Users/Coral.DESKTOP-FEUG583/PycharmProjects/OpencvPython1/Resources/Peru_lake.png'
 
 cv2.namedWindow("TrackBars")
 
@@ -68,15 +68,15 @@ cv2.resizeWindow("TrackBars", 640, 240)
 # hue values are from 0 to 360 , but in opencv - 0:179
 # 5) we have to call this function every time something changes in these trackbars
 
-cv2.createTrackbar("Hue Min", "TrackBars", 0, 179, empty)
-cv2.createTrackbar("Hue Max", "TrackBars", 177, 179, empty)
+cv2.createTrackbar("Hue Min", "TrackBars", 144, 179, empty)
+cv2.createTrackbar("Hue Max", "TrackBars", 175, 179, empty)
 
 # saturation trackbar
-cv2.createTrackbar("Sat Min", "TrackBars", 67, 255, empty)
-cv2.createTrackbar("Sat Max", "TrackBars", 236, 255, empty)
+cv2.createTrackbar("Sat Min", "TrackBars", 125, 255, empty)
+cv2.createTrackbar("Sat Max", "TrackBars", 255, 255, empty)
 
 # value trackbar
-cv2.createTrackbar("Val Min", "TrackBars", 43, 255, empty)
+cv2.createTrackbar("Val Min", "TrackBars", 0, 255, empty)
 cv2.createTrackbar("Val Max", "TrackBars", 255, 255, empty)
 
 # we're going to read these trackbars, so we could apply to our image
@@ -116,10 +116,10 @@ while True:
 
     imgResult = cv2.bitwise_and(img, img, mask=mask)
 
-    cv2.imshow("original image", img)
-    cv2.imshow("HSV image", imgHSV)
-    cv2.imshow("Masked HSV image", mask)
-    cv2.imshow("Result image", imgResult)
+    # cv2.imshow("original image", img)
+    # cv2.imshow("HSV image", imgHSV)
+    # cv2.imshow("Masked HSV image", mask)
+    # cv2.imshow("Result image", imgResult)
 
     final = stack_images(0.6, ([img, imgHSV], [mask, imgResult]))
 

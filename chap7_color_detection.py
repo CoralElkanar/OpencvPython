@@ -53,7 +53,7 @@ def stack_images(scale, img_array):
 # ***********************************************
 
 
-path = 'C:/Users/Coral.DESKTOP-FEUG583/PycharmProjects/OpencvPython1/Resources/Peru_lake.png'
+path = 'Resources/Peru_lake.png'
 
 cv2.namedWindow("TrackBars")
 
@@ -125,5 +125,4 @@ while True:
 
     cv2.imshow("Original, HSV, Masked, Result", final)
 
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    cv2.waitKey(1)

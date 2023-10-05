@@ -29,12 +29,12 @@ cv2.namedWindow("HSV")
 cv2.resizeWindow("HSV", 640, 240)
 
 # create trackbars for adjusting the HSV range for color filtering
-cv2.createTrackbar("HUE Min", "HSV", 0, 179, empty)
-cv2.createTrackbar("HUE Max", "HSV", 179, 179, empty)
-cv2.createTrackbar("SAT Min", "HSV", 0, 255, empty)
-cv2.createTrackbar("SAT Max", "HSV", 255, 255, empty)
-cv2.createTrackbar("VALUE Min", "HSV", 0, 255, empty)
-cv2.createTrackbar("VALUE Max", "HSV", 255, 255, empty)
+cv2.createTrackbar("Hue Min", "HSV", 0, 179, empty)
+cv2.createTrackbar("Sat Min", "HSV", 0, 255, empty)
+cv2.createTrackbar("Value Min", "HSV", 0, 255, empty)
+cv2.createTrackbar("Hue Max", "HSV", 179, 179, empty)
+cv2.createTrackbar("Sat Max", "HSV", 255, 255, empty)
+cv2.createTrackbar("Value Max", "HSV", 255, 255, empty)
 
 
 # create a loop for video capturing and processing
@@ -47,10 +47,10 @@ while True:
 
     # retrieve the current trackbar values - to be saved to use in the paint project
     h_min = cv2.getTrackbarPos("Hue Min", "HSV")
-    h_max = cv2.getTrackbarPos("Hue Max", "HSV")
     s_min = cv2.getTrackbarPos("Sat Min", "HSV")
-    s_max = cv2.getTrackbarPos("Sat Max", "HSV")
     v_min = cv2.getTrackbarPos("Value Min", "HSV")
+    h_max = cv2.getTrackbarPos("Hue Max", "HSV")
+    s_max = cv2.getTrackbarPos("Sat Max", "HSV")
     v_max = cv2.getTrackbarPos("Value Max", "HSV")
 
     # define lower and upper bounds for the HSV color range
